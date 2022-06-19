@@ -1,11 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Card, Grid, makeStyles, Typography } from '@material-ui/core';
 import { useRestaurants } from '../../hooks/restaurantsList.hook';
+import Loading from '../Loading';
 
 const useStyles = makeStyles({
   root:{
     maxWidth: '60%',
     marginLeft: '20%',
+  },
+  text:{
+    fontFamily: 'Poppins', 
+    fontSize: '24px', 
+    marginBottom: '2%', 
+    marginTop: '2%'
+  },
+  textStyle:{
+    fontFamily: 'Poppins', 
+    fontSize: '16px', 
+    color: '#FFFFFF', 
+    marginLeft: '2%',
   },
   // card:{
   //   display: 'flex',
@@ -15,16 +28,23 @@ const useStyles = makeStyles({
 
 function RestaurantsList({title}){
   const classes = useStyles();
+  const [loading, setLoading] = useState(true);
+
   const restaurants = useRestaurants();
+  
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000);
 
-  console.log(restaurants);
-
+    return () => clearTimeout();
+  }, []);
 
   return(
     <div className={classes.root}>
       <div className={classes.card}>
         <div>
-          <Typography  style={{fontFamily: 'Poppins', fontSize: '24px', marginBottom: '2%', marginTop: '2%'}}>
+          <Typography className={classes.text}>
             <strong>{title}</strong>
           </Typography>
         </div>
@@ -41,24 +61,26 @@ function RestaurantsList({title}){
 
       
      <div>
-      <Grid container spacing={2} >
+     {loading ? <Loading /> :
+        (<Grid container spacing={2} >
           {restaurants.map(( item, index) => (
             <Grid item xs={6} sm={6} md={6} key={index}>
-             <a href="/">
+             <a href={`/detalhes/${item.id}`}>
              <Card style={{ 
                 backgroundImage: `url(${item.image})`, 
                 height: '160px', 
                 width: '100%',
                 objectFit: 'contain',
                 backgroundRepeat: "no-repeat", }} >
-                  <Typography style={{fontFamily: 'Poppins', fontSize: '16px', color: '#FFFFFF', marginLeft: '2%', }}>
+                  <Typography className={classes.textStyle}>
                     <strong>{item.name}</strong>
                   </Typography>
               </Card>
              </a>
             </Grid>
           ))}
-        </Grid>
+        </Grid>) 
+    }
      </div>
     </div>
   )

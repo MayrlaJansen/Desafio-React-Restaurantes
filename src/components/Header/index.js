@@ -9,6 +9,7 @@ const useStyles = makeStyles({
     backgroundRepeat: "no-repeat",
     minHeight:'250px',
     opacity: "0.9",
+    backgroundSize: '100% 100%',
   },
   header: {
     marginTop: '30px'
