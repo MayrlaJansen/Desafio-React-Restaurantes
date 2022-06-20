@@ -1,15 +1,13 @@
 import React from 'react';
-import Header from '../../components/Header';
-import Logo from '../../assets/logo.jpg'
-import RestaurantsList from '../../components/RestaurantsList';
-import { SUBTITLE, TITLE } from '../../variables';
 import { useParams } from 'react-router-dom';
+import RestaurantsList from '../../components/RestaurantsList';
+import HeaderSearch from '../../components/HeaderSearch';
 
 function SearchResults(){
   const { searchValue } = useParams();
   return(
     <div>
-    <Header logo={Logo} title={TITLE} subtitle={SUBTITLE} />
+    <HeaderSearch />
     <RestaurantsList title="Restaurantes" search={searchValue} />
   </div>
   )

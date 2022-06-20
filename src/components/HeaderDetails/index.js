@@ -7,7 +7,7 @@ const useStyles = makeStyles({
     backgroundRepeat: "no-repeat",
     minHeight:'200px',
     opacity: "0.9",
-    backgroundSize: '100% 100%',
+    backgroundSize: '100%',
   },
   text:{
     color: '#FFFFFF',

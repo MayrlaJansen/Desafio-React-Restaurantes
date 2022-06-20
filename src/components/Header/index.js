@@ -1,6 +1,7 @@
 import React from 'react';
 import { Grid, makeStyles, Typography } from '@material-ui/core'
 import Image from '../../assets/background.png';
+import Logo from '../../assets/logo.jpg'
 
 const useStyles = makeStyles({
   paperContainer: {
@@ -8,14 +9,14 @@ const useStyles = makeStyles({
     backgroundRepeat: "no-repeat",
     minHeight:'250px',
     opacity: "0.9",
-    backgroundSize: '100% 100%',
+    backgroundSize: '100%',
   },
   header: {
     marginTop: '30px'
   }
 })
 
-function Header({logo, title, subtitle}){
+function Header({title, subtitle}){
   const classes = useStyles();
 
   return(
@@ -30,7 +31,7 @@ function Header({logo, title, subtitle}){
     >
       <Grid item xs={1} sm={2}>
         <a href="/">
-          <img style={{width: "40%", marginLeft: "10%"}} src={logo} alt="" />
+          <img style={{width: "30%", marginLeft: "10%"}} src={Logo} alt="" />
         </a>
       </Grid>
       <Grid item xs={10} sm={4} className={classes.header}>
