@@ -1,10 +1,8 @@
 import React from 'react';
 import Header from '../../components/Header';
-import Logo from '../../assets/logo.png'
+import Logo from '../../assets/logo.jpg'
 import RestaurantsList from '../../components/RestaurantsList';
-
-const TITLE = "Descubra novos sabores";
-const SUBTITLE = "Aqui eu converso com você sobre nossa proposta";
+import { SUBTITLE, TITLE } from '../../variables';
 
 function Home(){
   return(

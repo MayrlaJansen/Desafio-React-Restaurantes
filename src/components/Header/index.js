@@ -1,7 +1,6 @@
 import React from 'react';
 import { Grid, makeStyles, Typography } from '@material-ui/core'
 import Image from '../../assets/background.png';
-import SearchBar from '../SearchBar';
 
 const useStyles = makeStyles({
   paperContainer: {
@@ -30,7 +29,9 @@ function Header({logo, title, subtitle}){
       spacing={2}
     >
       <Grid item xs={1} sm={2}>
-        <img style={{width: "40%", marginLeft: "10%"}} src={logo} alt="" />
+        <a href="/">
+          <img style={{width: "40%", marginLeft: "10%"}} src={logo} alt="" />
+        </a>
       </Grid>
       <Grid item xs={10} sm={4} className={classes.header}>
         <Typography style={{fontFamily: 'Poppins', fontSize: '24px'}}>
@@ -41,7 +42,6 @@ function Header({logo, title, subtitle}){
         </Typography>
       </Grid>
     </Grid>
-    <SearchBar />
     </div>
   )
 }

@@ -36,7 +36,6 @@ function RestaurantDetails({props}){
   const classes = useStyles();
   const { id } = useParams();
   const restaurantDetails = useRestaurantDetails({id});
-  console.log(restaurantDetails)
 
   return(
     <>    

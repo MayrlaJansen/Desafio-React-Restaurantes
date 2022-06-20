@@ -1,12 +1,21 @@
 import React, { useState } from 'react';
-import { IconButton, Input, InputAdornment, makeStyles } from '@material-ui/core';
+import {  IconButton, Input, InputAdornment, makeStyles } from '@material-ui/core';
 import SearchIcon from '@mui/icons-material/Search';
+import { useNavigate } from 'react-router-dom';
+import { theme } from '../../theme';
 
 const useStyles = makeStyles({
   root: {
     maxWidth: "50%",
-    marginTop: "2%",
+    marginTop: "-7%",
     marginLeft: "25%",
+    marginBottom: "6%",
+    [theme.breakpoints.down('xs')]: {
+      maxWidth: "80%",
+      marginTop: "-20%",
+      marginLeft: "10%",
+      marginBottom: "15%",
+    },
   },
   searchBar: {
     backgroundColor: '#FFFFFF',
@@ -17,6 +26,7 @@ const useStyles = makeStyles({
 function SearchBar(){
   const classes = useStyles();
   const [searchValue, setSearchValue] = useState("");
+  const navigate = useNavigate();
 
   return(
     <div className={classes.root}>
@@ -32,7 +42,8 @@ function SearchBar(){
         <InputAdornment position="start">
           <IconButton
             aria-label="toggle password visibility"
-            onClick={()=>{}}
+            onClick={()=>{navigate(`/resultados/${searchValue}`)}}
+            disabled={searchValue === ''}
           >
             {<SearchIcon sx={{color: "#ED1C24"}} />}
           </IconButton>
