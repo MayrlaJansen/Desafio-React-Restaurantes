@@ -19,19 +19,19 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 
 ### 🎲 Rodando o projeto
 
-# Clone este repositório
+#### Clone este repositório
 $ git clone <https://github.com/MayrlaJansen/Desafio-React-Restaurantes.git>
 
-# Acesse a pasta do projeto no terminal/cmd
+#### Acesse a pasta do projeto no terminal/cmd
 $ cd nlw1
 
-# Instale as dependências
+#### Instale as dependências
 $ npm install
 
-# Execute a aplicação em modo de desenvolvimento
+#### Execute a aplicação em modo de desenvolvimento
 $ npm start
 
-# O servidor inciará na porta:3000 - acesse <http://localhost:3000>
+#### O servidor inciará na porta:3000 - acesse <http://localhost:3000>
 
 ### 🛠 Tecnologias
 
